@@ -37,7 +37,7 @@
 
 <script>
     function validateForm(event) {
-        event.preventDefault(); // Prevents the form from submitting
+        event.preventDefault(); 
 
         const fullName = document.getElementById('fullName').value;
         const username = document.getElementById('username').value;
@@ -45,13 +45,13 @@
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirmPassword').value;
 
-        // Check if any field is empty
+      
         if (!fullName || !username || !email || !password || !confirmPassword) {
             alert('All fields are required!');
             return;
         }
 
-        // Validate email format using a simple regular expression
+        
         function validateEmail(email) {
             const emailPattern = /^\S+@\S+\.\S+$/;
             return emailPattern.test(email);
@@ -61,20 +61,20 @@
             return;
         }
 
-        // Check if password and confirm password match
+        
         if (password !== confirmPassword) {
             alert('Passwords do not match!');
             return;
         }
 
-        // Check if the password meets the minimum length requirement
-        const minPasswordLength = 8; // Change this value to set the minimum length
+       
+        const minPasswordLength = 8; 
         if (password.length < minPasswordLength) {
             alert(`Password should be at least ${minPasswordLength} characters long`);
             return;
         }
 
-        // If all validations pass, the form is valid
+       
         alert('Form submitted successfully!');
         setTimeout(() => {
             document.getElementById('myForm').reset();
